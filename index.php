@@ -24,15 +24,40 @@
       <input type="submit" name="submit" value="Submit" />
 </form>
 <?php
+
+	//Azure Table Storage example
+	require_once 'vendor\autoload.php';
+
+	use WindowsAzure\Common\ServicesBuilder;
+	use WindowsAzure\Common\ServiceException;
+
+	
+	// Create table REST proxy.
+	$connectionString = "DefaultEndpointsProtocol=https;AccountName=bitnamieastus5213449027;AccountKey=6B6j0Nw7g/cMNNWhjwUrVNVJU3jwzI2t9twlrMtArNBstn9ofpzGVq+hKLn0jE7T6Ntq+kPwaOVqpkPD9aLuOQ==";
+	$tableRestProxy = ServicesBuilder::getInstance()->createTableService($connectionString);
+
+	try {
+		// Create table.
+		$tableRestProxy->createTable("test");
+	}
+	catch(ServiceException $e){
+		$code = $e->getCode();
+		$error_message = $e->getMessage();
+		// Handle exception based on error codes and messages.
+		// Error codes and messages can be found here: 
+		// http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
+	}
+
+
     // DB connection info
     //TODO: Update the values for $host, $user, $pwd, and $db
     //using the values you retrieved earlier from the portal.
-    $host = "us-cdbr-azure-southcentral-e.cloudapp.net";
-    $user = "bad9085a3f42e4";
-    $pwd = "312ad887";
-    $db = "kestestAZuOZD6wb";
+    //$host = "us-cdbr-azure-southcentral-e.cloudapp.net";
+    //$user = "bad9085a3f42e4";
+    //$pwd = "312ad887";
+    //$db = "kestestAZuOZD6wb";
     // Connect to database.
-    try {
+    /*try {
         $conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
         $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
     }
@@ -77,7 +102,7 @@
         echo "</table>";
     } else {
         echo "<h3>No one is currently registered.</h3>";
-    }
+    }*/
 ?>
 </body>
 </html>

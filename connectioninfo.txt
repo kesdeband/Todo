@@ -1,0 +1,3 @@
+Database=kestestAZuOZD6wb;Data Source=us-cdbr-azure-southcentral-e.cloudapp.net;User Id=bad9085a3f42e4;Password=312ad887
+
+-hus-cdbr-azure-southcentral-e.cloudapp.net -ubad9085a3f42e4 -p312ad887 -DkestestAZuOZD6wb

@@ -26,7 +26,7 @@
 <?php
 
 	//SQL Database
-	/*$server = "a826dspucn.database.windows.net,1433";
+	$server = "a826dspucn.database.windows.net,1433";
 	$user = "kesdeband@a826dspucn";
 	$pwd = "Google25";
 	$db = "testsqldb";
@@ -44,18 +44,18 @@
 	
 	
 	/* Retrieve each row as an associative array and display the results.*/
-	/*while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC))
+	while( $row = sqlsrv_fetch_array( $stmt, SQLSRV_FETCH_ASSOC))
 	{
       echo $row['Last Name'].", ".$row['First Name']."\n";
 	}
 	
 	/* Free statement and connection resources. */
-	//sqlsrv_free_stmt( $stmt);
-	//sqlsrv_close( $conn);
+	sqlsrv_free_stmt( $stmt);
+	sqlsrv_close( $conn);
 	
 
 	//Azure Table Storage example
-	require_once 'vendor\autoload.php';
+	/*require_once 'vendor\autoload.php';
 
 	use WindowsAzure\Common\ServicesBuilder;
 	use WindowsAzure\Common\ServiceException;
@@ -75,7 +75,7 @@
 		// Handle exception based on error codes and messages.
 		// Error codes and messages can be found here: 
 		// http://msdn.microsoft.com/en-us/library/windowsazure/dd179438.aspx
-	}
+	}*/
 
 
     // DB connection info
